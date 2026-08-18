@@ -1,3 +1,9 @@
+# RP2040-3D-Vision-Emitter-sView
+
+Modified fork of the [RP2040 3D Vision Emitter](https://github.com/NTM-3D/RP2040-3D-Vision-Emitter) to work with [sView shutter glasses](https://github.com/jandy123/sView-shutter-glasses/tree/master) and Panasonic IR glasses, in particular. 
+
+Original README below.
+
 # RP2040 3D Vision Emitter
 
 RP2040 3D Vision Emitter is inspired by the original [3DVisionAVR](https://github.com/lukis101/3DVisionAVR) and reimplements it on the RP2040 microcontroller. What began as a port has matured into an improved and more robust version that resolves many of the issues found in the original firmware while expanding its capabilities in regards to the 3D Vision driver mode.  

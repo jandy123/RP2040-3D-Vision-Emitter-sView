@@ -2,6 +2,12 @@
 
 Modified fork of the [RP2040 3D Vision Emitter](https://github.com/NTM-3D/RP2040-3D-Vision-Emitter) to work with [sView shutter glasses](https://github.com/jandy123/sView-shutter-glasses/tree/master) and Panasonic IR glasses, in particular. 
 
+#### Build with Linux
+
+export PICO_SDK_PATH=/path/to/pico-sdk
+cmake .
+make
+
 Original README below.
 
 # RP2040 3D Vision Emitter

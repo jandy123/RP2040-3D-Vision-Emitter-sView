@@ -67,7 +67,9 @@ static void ws2812_program_init(PIO pio, uint sm, uint offset, uint pin, float f
 }
 
 static inline uint32_t ws2812_color_from_rgb(uint8_t red, uint8_t green, uint8_t blue) {
-    return ((uint32_t)green << 16) | ((uint32_t)red << 8) | (uint32_t)blue;
+  //LUK: green and red are swapped???
+  //return ((uint32_t)green << 16) | ((uint32_t)red << 8) | (uint32_t)blue;
+  return ((uint32_t)red << 16) | ((uint32_t)green << 8) | (uint32_t)blue;
 }
 
 void status_led_init(void) {

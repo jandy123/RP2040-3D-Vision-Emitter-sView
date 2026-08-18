@@ -4,9 +4,11 @@ Modified fork of the [RP2040 3D Vision Emitter](https://github.com/NTM-3D/RP2040
 
 #### Build with Linux
 
+```
 export PICO_SDK_PATH=/path/to/pico-sdk
 cmake .
 make
+```
 
 Original README below.
 

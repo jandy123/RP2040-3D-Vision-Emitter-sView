@@ -12,6 +12,9 @@
 #include "ir_emitter.h"
 #include "ir_protocols.h"
 
+//LUK: added
+uint16_t frame_pan_hus = 2u * 3500u;
+
 /* ------------------------------------------------------------------
  *  PIO program - 4 instructions
  *
@@ -47,7 +50,9 @@ static const struct pio_program ir_wave_program = {
 #define PIO_EDGE_OVERHEAD  4u
 #define IR_MAX_SEGMENTS    32u
 
-static const ir_protocol_t *g_protocol = &IR_PROT_3DVISION;
+//LUK: !!!
+//static const ir_protocol_t *g_protocol = &IR_PROT_3DVISION;
+static const ir_protocol_t *g_protocol = &IR_PROT_PANASONIC;
 
 static volatile bool     g_emitter_active      = false;
 static bool              g_emitter_active_last  = false;
@@ -109,8 +114,11 @@ static uint build_waveform(uint8_t start_token) {
     uint n = 0;
 
     /* Leading LOW wait: FRAME_PAN (convert half-us to us) */
-    g_waveform[n++] = ir_pio_word(0, FRAME_PAN_HUS / 2u);
+    //LUK: added
+    //g_waveform[n++] = ir_pio_word(0, FRAME_PAN_HUS / 2u);
+    g_waveform[n++] = ir_pio_word(0, frame_pan_hus / 2u);
 
+    
     uint8_t token       = start_token;
     bool    first_token = true;
 

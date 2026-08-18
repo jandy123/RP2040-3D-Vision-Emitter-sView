@@ -4,8 +4,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#define FRAME_DURATION_HUS (2u * 400u)
-#define FRAME_PAN_HUS (2u * 0u)
+#define FRAME_DURATION_HUS (2u * 4000u) //LUK: orig 2 * 400
+#define FRAME_PAN_HUS (2u * 3500u) //LUK: orig 2 * 0
 #define FRAME_ALARM_DELAY_US 3000u
 
 #define IR_PIN 2

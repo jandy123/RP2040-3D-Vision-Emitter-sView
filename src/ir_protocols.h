@@ -29,6 +29,7 @@ static const uint16_t IR_TIMINGS_3DVISION[] = {
     43,
     23, 78, 40
 };
+
 static const ir_protocol_t IR_PROT_3DVISION = {
     .sizes = {3, 3, 1, 3},
     .indices = {0, 3, 6, 7},
@@ -51,6 +52,7 @@ static const uint16_t IR_TIMINGS_SONY[] = {
     20, 20, 20, 20, 20, 140, 20, 20, 20,
     20, 20, 20, 20, 20, 380, 20, 20, 20
 };
+
 static const ir_protocol_t IR_PROT_SONY = {
     .sizes = {9, 9, 9, 9},
     .indices = {27, 0, 9, 18},
@@ -63,9 +65,11 @@ static const uint16_t IR_TIMINGS_PANASONIC[] = {
     20, 60, 20, 60, 20, 20, 20,
     20, 20, 20, 60, 20, 60, 20
 };
+
 static const ir_protocol_t IR_PROT_PANASONIC = {
     .sizes = {7, 7, 7, 7},
-    .indices = {0, 7, 14, 21},
+    //.indices = {0, 7, 14, 21},
+    .indices = {21, 14, 7, 0}, //LUK:!!!
     .timings = IR_TIMINGS_PANASONIC,
 };
 

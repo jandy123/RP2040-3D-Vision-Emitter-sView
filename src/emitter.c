@@ -6,6 +6,9 @@
 #include "emitter.h"
 #include "ir_emitter.h"
 
+//LUK: see ir_emitter.c
+extern uint16_t frame_pan_hus;
+
 static uint8_t command = 0;
 static uint8_t offset = 0;
 static uint8_t amount = 0;
@@ -192,6 +195,9 @@ void emitter_handle_swap_out(const uint8_t *data, uint16_t len) {
         return;
     }
 
+    //LUK: added
+    frame_pan_hus = ((uint16_t)(data[3] << 8)) | data[2];
+    
     uint64_t now_us = time_us_64();
     uint8_t new_eye = data[1] & 0x01u;
     bool packet_has_feff = (data[6] == 0xFEu) && (data[7] == 0xFFu);

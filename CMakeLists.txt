@@ -9,8 +9,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 pico_sdk_init()
 
-set(PIO_RP2040_TOOLS "$ENV{USERPROFILE}/.platformio/packages/tool-rp2040tools")
-set(ELF2UF2_EXE "${PIO_RP2040_TOOLS}/elf2uf2.exe")
+#set(PIO_RP2040_TOOLS "$ENV{USERPROFILE}/.platformio/packages/tool-rp2040tools")
+#set(ELF2UF2_EXE "${PIO_RP2040_TOOLS}/elf2uf2.exe")
 
 add_executable(rp2040_3d_vision_emitter
     src/main.c
@@ -51,3 +51,5 @@ if (EXISTS "${ELF2UF2_EXE}")
         VERBATIM
     )
 endif()
+
+pico_add_extra_outputs(rp2040_3d_vision_emitter)
